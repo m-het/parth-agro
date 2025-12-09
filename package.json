@@ -4,7 +4,7 @@
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": "24.x"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development NODE_OPTIONS='--dns-result-order=ipv4first' tsx server/index.ts",
@@ -108,4 +108,5 @@
     "bufferutil": "^4.0.8"
   }
 }
+
 
