@@ -55,12 +55,20 @@ const contactInquirySchema = new Schema({
     status: { type: String, default: 'new' },
 }, { timestamps: true });
 
+// User Schema
+const userSchema = new Schema({
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    role: { type: String, default: 'admin' },
+}, { timestamps: true });
+
 // Models
 export const Farmer = mongoose.models.Farmer || mongoose.model('Farmer', farmerSchema);
 export const Factory = mongoose.models.Factory || mongoose.model('Factory', factorySchema);
 export const ColdStorage = mongoose.models.ColdStorage || mongoose.model('ColdStorage', coldStorageSchema);
 export const Inventory = mongoose.models.Inventory || mongoose.model('Inventory', inventorySchema);
 export const ContactInquiry = mongoose.models.ContactInquiry || mongoose.model('ContactInquiry', contactInquirySchema);
+export const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 // Zod Schemas for Validation
 export const insertFarmerSchema = z.object({
